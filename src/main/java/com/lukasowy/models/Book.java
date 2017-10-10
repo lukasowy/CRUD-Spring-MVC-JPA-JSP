@@ -8,18 +8,19 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
+//This tells Hibernate to make a table out of this class
 @Entity(name = "library")
 public class Book {
 	@Id
-    @GeneratedValue(strategy=GenerationType.AUTO)
+	@GeneratedValue(strategy = GenerationType.AUTO)
 	private long id;
-	
-	@Column(name="book_name")
+
+	@Column(name = "book_name")
 	private String bookName;
-	
+
 	private String author;
-	
-	@Column(name="purchase_date")
+
+	@Column(name = "purchase_date")
 	private Date purchaseDate;
 
 	public long getId() {
@@ -53,6 +54,5 @@ public class Book {
 	public void setPurchaseDate(Date purchaseDate) {
 		this.purchaseDate = purchaseDate;
 	}
-	
-	
+
 }
