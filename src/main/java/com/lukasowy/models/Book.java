@@ -7,6 +7,10 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
+
+import org.springframework.format.annotation.DateTimeFormat;
 
 //This tells Hibernate to make a table out of this class
 @Entity(name = "library")
@@ -21,6 +25,8 @@ public class Book {
 	private String author;
 
 	@Column(name = "purchase_date")
+	@DateTimeFormat(pattern = "yyyy-mm-dd") 
+	@Temporal(TemporalType.DATE)
 	private Date purchaseDate;
 
 	public long getId() {
